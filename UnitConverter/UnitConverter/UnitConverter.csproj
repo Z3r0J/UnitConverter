@@ -16,10 +16,4 @@
     <Folder Include="Features\Temperature\Endpoints\" />
     <Folder Include="Features\Weight\Endpoints\" />
   </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="Build">
-    <Exec Command="powershell .\tailwind.ps1" />
-  </Target>
-
-
 </Project>

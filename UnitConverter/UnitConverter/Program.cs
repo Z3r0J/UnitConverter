@@ -1,3 +1,5 @@
+using System.Diagnostics;
+using UnitConverter;
 using UnitConverter.Client.Pages;
 using UnitConverter.Components;
 
@@ -7,6 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddHostedService<TailwindWorker>();
+}
 
 var app = builder.Build();
 
